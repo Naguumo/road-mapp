@@ -1,17 +1,27 @@
 {
-  "name": "create-react-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-scripts": "2.1.1"
+  "name": "road-mapp",
+  "version": "1.0.0",
+  "description": "A place to make, store, and share you plans for the future",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Naguumo/road-mapp"
   },
   "scripts": {
-    "dev": "BROWSER=none react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "keywords": [],
+  "author": "Ishaan Bharal",
+  "license": "MIT",
+  "dependencies": {
+    "@blueprintjs/core": "^3.22.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0",
+    "react-use": "^13.12.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +31,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.19.1"
+  }
 }
