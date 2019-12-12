@@ -1,7 +1,3 @@
 {
-  "name": "Road Mapp",
-  "env": {
-    "REACT_APP_AUTH_CLIENT_ID": "FmpExNvGsYp8JRcd2L2SIyeQ3GEuywtW",
-    "REACT_APP_DB_SECRET_KEY": "fnADfUjm5YACEkhc87fxaQopFTr8TywpgfZT-OvC"
-  }
+  "name": "Road Mapp"
 }
