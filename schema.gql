@@ -1,0 +1,24 @@
+type Event {
+  label: String!
+  start: String!
+  end: String!
+  color: String
+  roadmap: Roadmap!
+}
+
+interface Roadmap {
+  slug: String! @unique
+  events: [Event!] @relation
+}
+
+type UserRoadmap implements Roadmap {
+  slug: String! @unique
+  owner: String
+  events: [Event!] @relation
+}
+
+type PasswordRoadmap implements Roadmap {
+  slug: String! @unique
+  password: String!
+  events: [Event!] @relation
+}
