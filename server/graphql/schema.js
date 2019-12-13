@@ -1,39 +1,44 @@
-import { buildSchema } from 'graphql';
-
-const schema = buildSchema(`
-type Event {
+export default `
+interface Event {
   id: ID!
   label: String!
   start: String!
   end: String!
   color: String
-  roadmap: Roadmap!
+}
+
+type PasswordEvent {
+  id: ID!
+  label: String!
+  start: String!
+  end: String!
+  color: String
+  roadmap: PasswordRoadmap!
 }
 
 interface Roadmap {
   id: ID!
   slug: String!
-  events: [Event!]
-}
-
-type UserRoadmap implements Roadmap {
-  id: ID!
-  slug: String!
-  owner: String
-  events: [Event!]
 }
 
 type PasswordRoadmap implements Roadmap {
   id: ID!
   slug: String!
   password: String!
-  events: [Event!]
+  events: [PasswordEvent!]
 }
 
 type Query {
-  events: [Event]
-  roadmaps: [Roadmap]
+  passwordEvent(id: ID!): PasswordEvent
+  passwordRoadmap(slug: String!, password: String!): PasswordRoadmap
 }
-`);
 
-export default schema;
+type Mutation {
+  createPasswordEvent(slug: String!, password: String!, label: String!, start: String!, end: String!, color: String): PasswordEvent
+  updatePasswordEvent(slug: String!, password: String!, id: ID!, label: String, start: String, end: String, color: String): [Int!]!
+  deletePasswordEvent(slug: String!, password: String!, id: ID!): Int!
+  createPasswordRoadmap(slug: String!, password: String!): PasswordRoadmap
+  updatePasswordRoadmap(id: ID!, slug: String, password: String): [Int!]!
+  deletePasswordRoadmap(slug: String!, password: String!): Int!
+}
+`;
