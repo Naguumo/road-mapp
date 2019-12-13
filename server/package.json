@@ -1,0 +1,18 @@
+{
+  "name": "road-mapp",
+  "version": "1.0.0",
+  "description": "A place to make, store, and share you plans for the future",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Naguumo/road-mapp"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Ishaan Bharal",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
