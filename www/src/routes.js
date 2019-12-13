@@ -4,7 +4,7 @@ const Routes = {
   home: {
     path: '/',
     component: HomePage,
-    hidden: true,
+    hidden: false,
     routes: null
   }
 };

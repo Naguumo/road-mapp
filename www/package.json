@@ -23,6 +23,7 @@
     "@emotion/core": "^10.0.22",
     "graphql": "^14.5.8",
     "history": "^4.10.1",
+    "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

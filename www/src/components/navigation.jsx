@@ -1,38 +1,41 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Navbar } from '@blueprintjs/core';
+import { NavLink } from 'react-router-dom';
+import { Navbar, Button, Alignment, Classes } from '@blueprintjs/core';
 import { Global, css } from '@emotion/core';
+import { capitalize } from 'lodash';
 import Routes from 'routes';
-import Logo from 'components/../../public/logo.png';
+
+const navStyles = css`
+  #root {
+    padding-top: 50px;
+  }
+`;
 
 const Navigation = () => {
   return (
     <>
-      <Navbar className="bp3-dark" fixedToTop>
-        <Navbar.Group>
-          <Link to={Routes.home.path}>
-            <Navbar.Heading>
-              <img src={Logo} height={50} alt="Road Mapp" />
-            </Navbar.Heading>
-          </Link>
+      <Navbar className={Classes.DARK} fixedToTop>
+        <Navbar.Group align={Alignment.LEFT}>
+          <Navbar.Heading>Road Mapp</Navbar.Heading>
         </Navbar.Group>
-        <Navbar.Group>
+        <Navbar.Group align={Alignment.RIGHT}>
           {Object.keys(Routes)
             .filter(key => !Routes[key].hidden)
             .map(key => (
-              <NavLink key={key} to={Routes[key].path}>
-                {key}
+              <NavLink
+                key={key}
+                to={Routes[key].path}
+                className={`${Classes.BUTTON} ${Classes.MINIMAL}`}
+              >
+                {capitalize(key)}
               </NavLink>
             ))}
+          <Navbar.Divider />
+          <Button className={Classes.MINIMAL} icon="user" text="Login" />
+          <Button className={Classes.MINIMAL} icon="cog" text="Settings" />
         </Navbar.Group>
       </Navbar>
-      <Global
-        styles={css`
-          #root {
-            padding-top: 50px;
-          }
-        `}
-      />
+      <Global styles={navStyles} />
     </>
   );
 };
