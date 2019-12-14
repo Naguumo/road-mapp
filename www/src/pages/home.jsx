@@ -2,43 +2,54 @@
 
 import React from 'react';
 import { css, jsx } from '@emotion/core';
-import { Card, Classes, Elevation } from '@blueprintjs/core';
 
 const HomePage = () => {
-  console.log(Classes);
   return (
     <div
       css={css`
-        margin 10px;
+        margin 15px;
         display: grid;
-        grid-template-columns: 5fr 1fr;
+        grid-template-columns: 1fr 4fr;
         grid-template-rows: auto;
-        grid-gap: 20px;
-        grid-template-areas: 'main sidebar';
-        place-items: stretch;
+        grid-gap: 15px;
+        grid-template-areas: 'header header' 'legend main';
+        place-items: center;
       `}
     >
-      <Card
-        interactive={false}
-        elevation={Elevation.TWO}
-        className={Classes.DARK}
+      <div
+        css={css`
+          grid-area: header;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        `}
+      >
+        <img
+          src="/logo.svg"
+          alt="Road Mapp"
+          css={css`
+            height: 15em;
+          `}
+        />
+        <div>
+          <h1>Road Mapp</h1>
+          <p>A place to make, store, and share you plans for the future</p>
+        </div>
+      </div>
+      <div
+        css={css`
+          grid-area: legend;
+        `}
+      >
+        Legend
+      </div>
+      <div
         css={css`
           grid-area: main;
         `}
       >
         Main
-      </Card>
-      <Card
-        interactive={false}
-        elevation={Elevation.TWO}
-        className={Classes.DARK}
-        css={css`
-          grid-area: sidebar;
-        `}
-      >
-        This is a privately hosted project. Any ads help keep us running and
-        Free!
-      </Card>
+      </div>
     </div>
   );
 };

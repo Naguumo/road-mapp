@@ -23,6 +23,7 @@
     ],
     "import/no-unresolved": 0,
     "import/extensions": 0,
+    "import/no-extraneous-dependencies": 1,
     "react/jsx-curly-newline": 0,
     "react/prop-types": 1,
     "react/jsx-indent": 1
